@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import React from "react";
 import Header from "./Header";
 import Main from "./Main";
@@ -188,13 +189,15 @@ function App() {
         }
       })
       .catch((err) => {
-        if (err) {
-          setIsConfirmPopupOpen({
-            isOpen: true,
-            popupImg: rejectIcon,
-            popupText: "Что-то пошло не так! Попробуйте ещё раз.",
-          });
+        // eslint-disable-next-line eqeqeq
+        if (err == 400) {
+          console.log("Неккоректно заполнено одно из полей.");
         }
+        setIsConfirmPopupOpen({
+          isOpen: true,
+          popupImg: rejectIcon,
+          popupText: "Что-то пошло не так! Попробуйте ещё раз.",
+        });
       });
   }
 
@@ -209,6 +212,11 @@ function App() {
         }
       })
       .catch((err) => {
+        if (err == 400) {
+          console.log("Не передано одно из полей.");
+        } else if (err == 401) {
+          console.log("пользователь с email не найден");
+        }
         setIsConfirmPopupOpen({
           isOpen: true,
           popupImg: rejectIcon,
@@ -229,8 +237,12 @@ function App() {
             history.push("/main");
           }
         })
-        .catch((err) => {
-          console.log(err);
+        .catch((error) => {
+          if (error == 400) {
+            console.log("Переданный токен некорректен");
+          } else if (error == 401) {
+            console.log("Токен не передан или передан не в том формате");
+          }
         });
     }
   }
@@ -266,7 +278,12 @@ function App() {
                 history.push("/signin");
               }}
             />
-            <Register handleRegister={handleRegister} />
+            <Register
+              handleRegister={handleRegister}
+              onLogin={() => {
+                history.push("/signin");
+              }}
+            />
           </Route>
           <Route path="/signin">
             <Header

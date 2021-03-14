@@ -28,7 +28,11 @@ function Register(props) {
         onChange={handleChange}
         placeholder="Введите ваш e-mail"
         required
+        autoComplete="useremail"
       />
+      <span className="auth-form__error" id="email-error">
+        {props.message}
+      </span>
       <input
         type="password"
         className="auth-form__input-password auth-form-input"
@@ -38,7 +42,9 @@ function Register(props) {
         placeholder="Введите пароль"
         required
         minLength="4"
+        autoComplete="current-password"
       />
+      <span className="auth-form__error" id="password-error"></span>
       <button
         type="submit"
         className="auth-form__button-submit"
@@ -46,7 +52,12 @@ function Register(props) {
       >
         Загеристрироваться
       </button>
-      <p className="auth-form__text"></p>
+      <p className="auth-form__text">
+        Уже зарегистрировались?
+        <button className="auth-form__button-redirect" onClick={props.onLogin}>
+          Войти
+        </button>
+      </p>
     </form>
   );
 }

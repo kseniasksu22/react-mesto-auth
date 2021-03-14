@@ -29,7 +29,9 @@ function Login(props) {
         value={data.email}
         onChange={handleChange}
         placeholder="Введите ваш e-mail"
+        autoComplete="useremail"
       />
+      <span className="auth-form__error" id="email-error"></span>
       <input
         type="password"
         className="auth-form__input-password auth-form-input"
@@ -37,7 +39,9 @@ function Login(props) {
         value={data.password}
         onChange={handleChange}
         placeholder="Введите пароль"
+        autoComplete="current-password"
       />
+      <span className="auth-form__error" id="password-error"></span>
       <button
         type="submit"
         className="auth-form__button-submit"
@@ -45,7 +49,6 @@ function Login(props) {
       >
         Войти
       </button>
-      <p className="auth-form__text"></p>
     </form>
   );
 }

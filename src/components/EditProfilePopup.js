@@ -64,7 +64,6 @@ function EditProfilePopup(props) {
     >
       <>
         <input
-          value={name}
           ref={nameRef}
           placeholder={name}
           type="text"
@@ -82,7 +81,6 @@ function EditProfilePopup(props) {
           Имя не может иметь меньше чем 2 и больше чем 40 букв
         </span>
         <input
-          value={description}
           ref={aboutRef}
           placeholder={description}
           type="text"

@@ -8,13 +8,11 @@ export function register(email, password) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
-  })
-    .then((result) => {
-      if (result.ok) {
-        return result.json();
-      } else return Promise.reject(`Что-то пошло не так: ${result.status}`);
-    })
-    .catch((err) => console.log(err));
+  }).then((res) => {
+    if (res.ok) {
+      return res.json();
+    } else return Promise.reject(`${res.status}`);
+  });
 }
 
 export function login(email, password) {
@@ -25,13 +23,11 @@ export function login(email, password) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
-  })
-    .then((result) => {
-      if (result.ok) {
-        return result.json();
-      } else return Promise.reject(`Что-то пошло не так: ${result.status}`);
-    })
-    .catch((err) => console.log(err));
+  }).then((res) => {
+    if (res.ok) {
+      return res.json();
+    } else return Promise.reject(`${res.status}`);
+  });
 }
 export function getContent(token) {
   return fetch(`${BASE_URL}/users/me`, {
@@ -41,11 +37,9 @@ export function getContent(token) {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-  })
-    .then((result) => {
-      if (result.ok) {
-        return result.json();
-      } else return Promise.reject(`Что-то пошло не так: ${result.status}`);
-    })
-    .catch((err) => console.log(err));
+  }).then((res) => {
+    if (res.ok) {
+      return res.json();
+    } else return Promise.reject(`${res.status}`);
+  });
 }
