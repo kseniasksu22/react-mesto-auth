@@ -2,10 +2,8 @@
 
 # Проект 11: Место
 
-=======
-
-Github Pages: [https://kseniasksu22.github.io/mesto-react](https://kseniasksu22.github.io/mesto-react "https://kseniasksu22.github.io/mesto-react")<br>
-11 часть сервиса обмена картинками. Проект реализован как практическое задание от Yandex.Praktikum.
+=
+14 часть сервиса обмена картинками. Проект реализован как практическое задание от Yandex.Praktikum.
 
 **Используется:**<br>
 HTML<br>
