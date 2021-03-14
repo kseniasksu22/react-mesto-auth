@@ -1,0 +1,21 @@
+.header__button{
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    outline: none;
+    height: 22px;
+    color: white;
+    background: transparent;
+    border: none;
+    padding:0;
+}
+
+@media screen and (max-width: 450px) {
+    .header__button{
+        font-size: 14px;
+        line-height: 17px;
+       
+    }
+}
