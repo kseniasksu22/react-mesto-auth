@@ -256,6 +256,7 @@ function App() {
   return (
     <div>
       <CurrentUserContext.Provider value={currentUser}>
+        <Header email={email} click={signOut} />
         <Switch>
           <ProtectedRoute
             path="/main"
@@ -271,13 +272,8 @@ function App() {
             onCardDelete={handleCardDelete}
             cards={cards}
           ></ProtectedRoute>
+
           <Route path="/signup">
-            <Header
-              text="Войти"
-              click={() => {
-                history.push("/signin");
-              }}
-            />
             <Register
               handleRegister={handleRegister}
               onLogin={() => {
@@ -285,13 +281,8 @@ function App() {
               }}
             />
           </Route>
+
           <Route path="/signin">
-            <Header
-              text="Регистрация"
-              click={() => {
-                history.push("/signup");
-              }}
-            />
             <Login handleLogin={handleLogin} />
           </Route>
           <Route>

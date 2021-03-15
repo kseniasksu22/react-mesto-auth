@@ -28,6 +28,7 @@
     border: none;
     outline: none;
     background: transparent;
+    text-decoration: none;
 }
 .auth-form__button-redirect:hover{
     opacity:0.6;

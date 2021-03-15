@@ -10,6 +10,7 @@
     background: transparent;
     border: none;
     padding:0;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 450px) {

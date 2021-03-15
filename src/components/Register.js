@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function Register(props) {
   const [data, setData] = React.useState({
     email: "",
@@ -54,9 +54,9 @@ function Register(props) {
       </button>
       <p className="auth-form__text">
         Уже зарегистрировались?
-        <button className="auth-form__button-redirect" onClick={props.onLogin}>
+        <Link to="/signin" className="auth-form__button-redirect">
           Войти
-        </button>
+        </Link>
       </p>
     </form>
   );
